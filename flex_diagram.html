@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+      .container {
+        background-color: #c4ebf9;
+        display: flex;
+        flex-direction: column;
+        width: 80vw;
+        height: 80vh;
+        justify-self: center;
+        align-self: center;
+        padding: 1rem;
+      }
+
+      .header {
+        background-color: #02bfb1;
+        height: 6rem;
+      }
+
+      .bod {
+        display: flex;
+        flex-direction: row;
+        flex: 1 2;
+        margin-top: 2rem;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .aside {
+        background-color: #6edb6e;
+        width: 20vw;
+        height: 62vh;
+      }
+      .article {
+        background-color: #fbb04c;
+        display: flex;
+        flex-direction: column;
+        width: 70vw;
+        height: 59vh;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+      }
+      .grid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 6rem;
+      }
+      .img {
+        background-color: #fcd24a;
+        height: 25vh;
+        width: 18vw;
+      }
+      p {
+        text-align: center;
+      }
+    </style>
+    <title>Flex Diagram</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header"><p>Header</p></div>
+      <div class="bod">
+        <div class="aside"><p>Aside</p></div>
+        <div class="article">
+          <p>Article</p>
+          <div class="grid">
+            <div class="img"><p>Image</p></div>
+            <div class="img"><p>Image</p></div>
+            <div class="img"><p>Image</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

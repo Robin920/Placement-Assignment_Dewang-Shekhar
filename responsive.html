@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      nav {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 2rem;
+      }
+
+      .nav_blue {
+        background-color: #659fcc;
+        height: 4rem;
+      }
+      .nav_grey {
+        background-color: #ababa9;
+        height: 4rem;
+      }
+
+      .body_black {
+        background-color: #797977;
+        height: 50vh;
+      }
+
+      .body_blue {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 3rem;
+      }
+      .body_blue_block {
+        background-color: #b2d5eb;
+        height: 20vh;
+      }
+
+      .foot_grey {
+        background-color: #c2c3bd;
+        height: 10vh;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .body_blue {
+          display: grid;
+          grid-template-columns: auto;
+          gap: 2rem;
+        }
+      }
+    </style>
+    <title>Responsive website</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav_blue"></div>
+      <div class="nav_grey"></div>
+    </nav>
+
+    <div class="body_black"></div>
+
+    <div class="body_blue">
+      <div class="body_blue_block"></div>
+      <div class="body_blue_block"></div>
+      <div class="body_blue_block"></div>
+    </div>
+
+    <div class="foot_grey"></div>
+  </body>
+</html>

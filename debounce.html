@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .search-container {
+        width: 300px;
+        margin: 20px auto;
+      }
+
+      #search-input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      #search-results {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 10px;
+      }
+
+      #search-results li {
+        padding: 5px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      #search-results li:last-child {
+        border-bottom: none;
+      }
+      h2 {
+        text-align: center;
+      }
+    </style>
+    <title>Debounce</title>
+  </head>
+  <body>
+    <h2>Enter a fruit name</h2>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search..." />
+      <ul id="search-results"></ul>
+    </div>
+
+    <script>
+      function debounce(func, delay) {
+        let timer;
+        return function () {
+          const context = this;
+          const args = arguments;
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            func.apply(context, args);
+          }, delay);
+        };
+      }
+
+      function performSearch() {
+        const searchInput = document.getElementById("search-input");
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        const searchResults = document.getElementById("search-results");
+
+        searchResults.innerHTML = "";
+
+        const data = [
+          "Apple",
+          "Banana",
+          "Orange",
+          "Grapes",
+          "Mango",
+          "Pineapple",
+          "Watermelon",
+          "Kiwi",
+        ];
+
+        const filteredResults = data.filter((item) =>
+          item.toLowerCase().includes(searchTerm)
+        );
+
+        filteredResults.forEach((result) => {
+          const li = document.createElement("li");
+          li.textContent = result;
+          searchResults.appendChild(li);
+        });
+      }
+
+      const searchInput = document.getElementById("search-input");
+      searchInput.addEventListener("input", debounce(performSearch, 3000));
+    </script>
+  </body>
+</html>
